@@ -24,6 +24,12 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
+         function addDirectLinkMarker(lat, lng, url) {
+    var marker = L.marker([lat, lng]).addTo(map);
+    marker.on('click', function() {
+      window.open(url, '_blank'); // Öffnet die Seite im neuen Tab
+    });
+  }
         // Marker mit Weiterleitung
         var marker1 = L.marker([52.272983, 8.041767]).addTo(map);
         marker1.on('click', function() {
@@ -31,12 +37,8 @@
         });
 
         // Marker mit Popup und Link
-        var marker2 = L.marker([53.11205382030338, 8.858019791500611]).addTo(map)
-        .bindPopup('<a href="https://aiagriculture7.wordpress.com/project-roland/" target="_blank" style="text-decoration: none; color: blue;">Project RoLand</a>');
        
-        const link = e.popup.getElement().querySelector('a');
-        link.addEventListener('click', function(event) {
-          event.stopPropagation(); // Verhindert Karteninteraktion
+     addDirectLinkMarker(53.11205382030338, 8.858019791500611 'https://aiagriculture7.wordpress.com/project-roland/'); // Beispiel-Link 1
 
               
       };
