@@ -35,4 +35,13 @@
             .bindPopup('<a href="https://aiagriculture7.wordpress.com/project-roland/" target="_blank">Project RoLand</a>');
     </script>
 </body>
+      // Aktiviert die direkte Interaktion mit Popups (optional)
+  map.on('popupopen', function(e) {
+    var links = e.popup.getElement().querySelectorAll('a');
+    links.forEach(function(link) {
+      link.onclick = function(event) {
+        event.stopPropagation(); // Verhindert unerwünschte Map-Interaktionen
+      };
+    });
+  });
 </html>
