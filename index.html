@@ -33,9 +33,9 @@
         // Marker mit Popup und Link
         var marker2 = L.marker([53.11205382030338, 8.858019791500611]).addTo(map)
             .bindPopup('<a href="https://aiagriculture7.wordpress.com/project-roland/" target="_blank">Project RoLand</a>');
-    </script>
-</body>
-      // Aktiviert die direkte Interaktion mit Popups (optional)
+              
+        // Aktiviert die direkte Interaktion mit Popups (optional)
+        
   map.on('popupopen', function(e) {
     var links = e.popup.getElement().querySelectorAll('a');
     links.forEach(function(link) {
@@ -44,4 +44,6 @@
       };
     });
   });
+    </script>
+</body>
 </html>
